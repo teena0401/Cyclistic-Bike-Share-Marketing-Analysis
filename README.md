@@ -100,22 +100,54 @@ HAVING ride_length_2 > MINUTE(0)
 
 #### Average Ride Duration: 
 
-<img src="https://i.imgur.com/vVSXXDx.png" height="100" width="80">
+<img src="https://i.imgur.com/JOUZW7q.png" height="300" width="450">
 
 #### User
 Looking at the total count of trips for each day of the week, members take more trips during the weekdays than casual riders; except during weekends, the number of trips taken by casual riders exceed members. We then can decude that majority of the member users using bikes for commuting to workplace. This can be further supported by looking at the numbers of riders taken throughout a day
 
-<img src="https://i.imgur.com/X8WaZkv.png" height="100" width="80">
+<img src="https://i.imgur.com/X8WaZkv.png" height="300" width="450">
 
 
 #### Hourly Traffic Analysis of Users
 
 Here, we can see that members take more bike rides overall than casual riders throughout the day. Ridership peaks around 8am, 12pm, and 6pm, suggesting an increase in rides during the morning, lunch, and evening rush hours of the day.
- <img src="https://i.imgur.com/ghp4lWs.png" height="100" width="80">
+ <img src="https://i.imgur.com/ghp4lWs.png" height="300" width="450">
 
 #### Monthly User Traffic 
-#### Most Popular Stations for Casual Users 
+Looking at the combined year, casual riders exceed members in number of bike rides between mid-May and mid-August, perhaps suggesting an increase in locals on vacation and tourists visiting Chicago during the summer months.
+<img src="https://i.imgur.com/rBuNeX0.png" height="300" width="450">
 
+#### Most Popular Stations for Casual Users 
+Top 10 popular station for casual and member users
+<img src="https://i.imgur.com/KibFps2.png" height="300" width="450">
 
 ## Conclusion 
+ 
+#### Findings
+
+Members: 
+- Members are most likely daily traveller who take bikes consistently during weekday than casual riders. 
+- Their average trip duration of 12.83 minutes is seven minutes lesser than the average trip length of casual users. 
+- Their ridership peaks around rush hour time during the day but decline during winter months
+
+Casual Riders: 
+- Casual Riders may be a mixture of locals and tourists who ride bikes for longer period of time and more often on the weekend. 
+- Their average trip duration is 6 minutes longer than members riders 
+- Their ridership peaks above members during the summer months
+
+
+
+##### Recommendations 
+
+Implement advertising annual memberships prices more using billboards/posters near the top 20 most popular stations for casual users.
+Provide a limited discount on annual memberships purchased during the months of lowest traffic to increase rider usage in these months.
+Have frequent advertisements on social media and television during peak hours and peak months, since that is when most people have a thought about riding bikes.
+Consider provide free ride minutes for every minute passed after 30 minutes of usage, where the free minutes can ONLY be redeemed on weekdays to help promote rider usage during weekdays.
+Now that I have defined the key differences between members and casual riders, the marketing department is able to come up with some strategies that can help market the annual membership to casual riders and convert them into members.
+
+I recommend launching a marketing campaign highlighting the benefits of having an annual membership pass. Rather than paying for each trip, Cylistic should emphasize to casual riders the lower-cost per hour compared to not having an annual membership. We should offer exclusive benefits for members such as a priority access pass that enables them to secure a bike up to an hour in advance by making reservations through the app.
+
+Cyclistic could also create a weekend membership pass providing casual riders with unlimited rides on the weekend. This could help persuade casual riders into purchasing an annual membership.
+
+Lastly, we could launch tiered weekly and monthly passes to capture casual riders in the market who cannot commit to an annual pass. This could be especially appealing during the summer months when the ridership of casual riders exceeds that of annual members.
 
