@@ -96,4 +96,14 @@ HAVING ride_length_2 > MINUTE(0)
 ```
 [summary statistics] 
 
+## Data Visualization 
+
+#### Average Ride Duration: 
+#### User
+#### Hourly Traffic Analysis of Users
+#### Monthly User Traffic 
+#### Most Popular Stations for Casual Users 
+
+
+## Conclusion 
 
