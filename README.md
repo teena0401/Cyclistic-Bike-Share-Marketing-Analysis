@@ -62,10 +62,10 @@ SELECT ride_id  ,rideable_type ,started_at ,ended_at ,start_station_name ,start_
 ### Processing and Analysis of Data 
 
  ```sql
--- filerting and cleaning the datatype --- 
+-- retrieving filtered and cleaned data --- 
 CREATE VIEW cyclistic.TRIPDATA AS SELECT
-ride_id  ,
-rideable_type ,
+distinct(ride_id),
+rideable_type,
 cast(str_to_date(started_at,'%d/%m/%y %H:%i') as datetime) as started_at,
 cast(str_to_date(ended_at,'%d/%m/%y %H:%i') as datetime) as ended_at,
 start_station_name, 
@@ -99,8 +99,20 @@ HAVING ride_length_2 > MINUTE(0)
 ## Data Visualization 
 
 #### Average Ride Duration: 
+
+<img src="https://i.imgur.com/vVSXXDx.png" height="100" width="80">
+
 #### User
+Looking at the total count of trips for each day of the week, members take more trips during the weekdays than casual riders; except during weekends, the number of trips taken by casual riders exceed members. We then can decude that majority of the member users using bikes for commuting to workplace. This can be further supported by looking at the numbers of riders taken throughout a day
+
+<img src="https://i.imgur.com/X8WaZkv.png" height="100" width="80">
+
+
 #### Hourly Traffic Analysis of Users
+
+Here, we can see that members take more bike rides overall than casual riders throughout the day. Ridership peaks around 8am, 12pm, and 6pm, suggesting an increase in rides during the morning, lunch, and evening rush hours of the day.
+ <img src="https://i.imgur.com/ghp4lWs.png" height="100" width="80">
+
 #### Monthly User Traffic 
 #### Most Popular Stations for Casual Users 
 
