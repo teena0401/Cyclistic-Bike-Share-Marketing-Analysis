@@ -14,22 +14,158 @@ The business-related problem statements that could be asked to improve the compa
 
 ### Preparing Data for Analysis
  
-For this project, I've used the 13 trip-data datasets dated from April 2020 to April 2021. Click on this link to access the website and download the datasets provided as .zip files. The data provided in this website is made available to access to the public.
-
+For this project, I've used the 13 trip-data datasets in 2021 year. Click on this link to access the website and download the datasets provided as .zip files. The data provided in this website is made available to access to the public.
 Or you could access and download the data from this repository named as "Raw Data".
 
-I am using Microsoft SQL Server Management Studio in this part of the project to help process and analyze the datasets.
+I am using MySQL in this part of the project to help process and analyze the datasets. 
 
 First make sure to import all of the dataset as a .csv file to the database server. Check and verify if the data types of each of the columns in each dataset is same to merge them all together.
 
 NOTE: the start_station_id column of dataset from Dec 2020 to April 2020 contains string values
 
 ```sql
-CREATE TABLE tripdata_2021A (ride_id VARCHAR(225) ,rideable_type TEXT, started_at VARCHAR(225),ended_at VARCHAR(225),start_station_name VARCHAR(225),start_station_id VARCHAR(225),end_station_name VARCHAR(225),
+
+- Due to large data file, I created table for each month and imported file by month before merging them into one. 
+
+
+--- January---
+CREATE TABLE tripdata_202101 (ride_id VARCHAR(225) ,rideable_type TEXT, started_at VARCHAR(225),ended_at VARCHAR(225),start_station_name VARCHAR(225),start_station_id VARCHAR(225),end_station_name VARCHAR(225),
 end_station_id TEXT,start_lat VARCHAR(225),start_lng VARCHAR(225),end_lat VARCHAR(225), end_lng VARCHAR(225),member_casual TEXT ,ride_length VARCHAR(225),day_of_week INT);
-```
+
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\Cyclistic.XLS\\202101-divvy-tripdata.csv'
+INTO TABLE tripdata_202101
+FIELDS TERMINATED BY ','
+ENCLOSED BY ""
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS; 
+
+---February---
+CREATE TABLE tripdata_202102 (ride_id VARCHAR(225) ,rideable_type TEXT, started_at VARCHAR(225),ended_at VARCHAR(225),start_station_name VARCHAR(225),start_station_id VARCHAR(225),end_station_name VARCHAR(225),
+end_station_id TEXT,start_lat VARCHAR(225),start_lng VARCHAR(225),end_lat VARCHAR(225), end_lng VARCHAR(225),member_casual TEXT ,ride_length VARCHAR(225),day_of_week INT);
+
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\Cyclistic.XLS\\202102-divvy-tripdata.csv'
+INTO TABLE tripdata_202102
+FIELDS TERMINATED BY ','
+ENCLOSED BY ""
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS; 
+
+---March---
+CREATE TABLE tripdata_202103 (ride_id VARCHAR(225) ,rideable_type TEXT, started_at VARCHAR(225),ended_at VARCHAR(225),start_station_name VARCHAR(225),start_station_id VARCHAR(225),end_station_name VARCHAR(225),
+end_station_id TEXT,start_lat VARCHAR(225),start_lng VARCHAR(225),end_lat VARCHAR(225), end_lng VARCHAR(225),member_casual TEXT ,ride_length VARCHAR(225),day_of_week INT);
+
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\Cyclistic.XLS\\202103-divvy-tripdata.csv'
+INTO TABLE tripdata_202103
+FIELDS TERMINATED BY ','
+ENCLOSED BY ""
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS; 
+
+---April---
+CREATE TABLE tripdata_202104 (ride_id VARCHAR(225) ,rideable_type TEXT, started_at VARCHAR(225),ended_at VARCHAR(225),start_station_name VARCHAR(225),start_station_id VARCHAR(225),end_station_name VARCHAR(225),
+end_station_id TEXT,start_lat VARCHAR(225),start_lng VARCHAR(225),end_lat VARCHAR(225), end_lng VARCHAR(225),member_casual TEXT ,ride_length VARCHAR(225),day_of_week INT);
+
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\Cyclistic.XLS\\202104-divvy-tripdata.csv'
+INTO TABLE tripdata_202104
+FIELDS TERMINATED BY ','
+ENCLOSED BY ""
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS; 
+
+---May---
+CREATE TABLE tripdata_202105 (ride_id VARCHAR(225) ,rideable_type TEXT, started_at VARCHAR(225),ended_at VARCHAR(225),start_station_name VARCHAR(225),start_station_id VARCHAR(225),end_station_name VARCHAR(225),
+end_station_id TEXT,start_lat VARCHAR(225),start_lng VARCHAR(225),end_lat VARCHAR(225), end_lng VARCHAR(225),member_casual TEXT ,ride_length VARCHAR(225),day_of_week INT);
+
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\Cyclistic.XLS\\202102-divvy-tripdata.csv'
+INTO TABLE tripdata_202105
+FIELDS TERMINATED BY ','
+ENCLOSED BY ""
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS; 
+
+---June---
+CREATE TABLE tripdata_202106 (ride_id VARCHAR(225) ,rideable_type TEXT, started_at VARCHAR(225),ended_at VARCHAR(225),start_station_name VARCHAR(225),start_station_id VARCHAR(225),end_station_name VARCHAR(225),
+end_station_id TEXT,start_lat VARCHAR(225),start_lng VARCHAR(225),end_lat VARCHAR(225), end_lng VARCHAR(225),member_casual TEXT ,ride_length VARCHAR(225),day_of_week INT);
+
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\Cyclistic.XLS\\202102-divvy-tripdata.csv'
+INTO TABLE tripdata_202106
+FIELDS TERMINATED BY ','
+ENCLOSED BY ""
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS; 
+
+---July---
+CREATE TABLE tripdata_202107 (ride_id VARCHAR(225) ,rideable_type TEXT, started_at VARCHAR(225),ended_at VARCHAR(225),start_station_name VARCHAR(225),start_station_id VARCHAR(225),end_station_name VARCHAR(225),
+end_station_id TEXT,start_lat VARCHAR(225),start_lng VARCHAR(225),end_lat VARCHAR(225), end_lng VARCHAR(225),member_casual TEXT ,ride_length VARCHAR(225),day_of_week INT);
+
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\Cyclistic.XLS\\202102-divvy-tripdata.csv'
+INTO TABLE tripdata_202107
+FIELDS TERMINATED BY ','
+ENCLOSED BY ""
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS; 
+
+---August---
+CREATE TABLE tripdata_202108 (ride_id VARCHAR(225) ,rideable_type TEXT, started_at VARCHAR(225),ended_at VARCHAR(225),start_station_name VARCHAR(225),start_station_id VARCHAR(225),end_station_name VARCHAR(225),
+end_station_id TEXT,start_lat VARCHAR(225),start_lng VARCHAR(225),end_lat VARCHAR(225), end_lng VARCHAR(225),member_casual TEXT ,ride_length VARCHAR(225),day_of_week INT);
+
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\Cyclistic.XLS\\202102-divvy-tripdata.csv'
+INTO TABLE tripdata_202108
+FIELDS TERMINATED BY ','
+ENCLOSED BY ""
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS; 
+
+---September---
+CREATE TABLE tripdata_202109 (ride_id VARCHAR(225) ,rideable_type TEXT, started_at VARCHAR(225),ended_at VARCHAR(225),start_station_name VARCHAR(225),start_station_id VARCHAR(225),end_station_name VARCHAR(225),
+end_station_id TEXT,start_lat VARCHAR(225),start_lng VARCHAR(225),end_lat VARCHAR(225), end_lng VARCHAR(225),member_casual TEXT ,ride_length VARCHAR(225),day_of_week INT);
+
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\Cyclistic.XLS\\202102-divvy-tripdata.csv'
+INTO TABLE tripdata_202109
+FIELDS TERMINATED BY ','
+ENCLOSED BY ""
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS; 
+
+---October---
+CREATE TABLE tripdata_202110 (ride_id VARCHAR(225) ,rideable_type TEXT, started_at VARCHAR(225),ended_at VARCHAR(225),start_station_name VARCHAR(225),start_station_id VARCHAR(225),end_station_name VARCHAR(225),
+end_station_id TEXT,start_lat VARCHAR(225),start_lng VARCHAR(225),end_lat VARCHAR(225), end_lng VARCHAR(225),member_casual TEXT ,ride_length VARCHAR(225),day_of_week INT);
+
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\Cyclistic.XLS\\202102-divvy-tripdata.csv'
+INTO TABLE tripdata_202110
+FIELDS TERMINATED BY ','
+ENCLOSED BY ""
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS; 
+
+---November---
+CREATE TABLE tripdata_202111 (ride_id VARCHAR(225) ,rideable_type TEXT, started_at VARCHAR(225),ended_at VARCHAR(225),start_station_name VARCHAR(225),start_station_id VARCHAR(225),end_station_name VARCHAR(225),
+end_station_id TEXT,start_lat VARCHAR(225),start_lng VARCHAR(225),end_lat VARCHAR(225), end_lng VARCHAR(225),member_casual TEXT ,ride_length VARCHAR(225),day_of_week INT);
+
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\Cyclistic.XLS\\202102-divvy-tripdata.csv'
+INTO TABLE tripdata_202111
+FIELDS TERMINATED BY ','
+ENCLOSED BY ""
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS; 
+
+---December---
+CREATE TABLE tripdata_202112 (ride_id VARCHAR(225) ,rideable_type TEXT, started_at VARCHAR(225),ended_at VARCHAR(225),start_station_name VARCHAR(225),start_station_id VARCHAR(225),end_station_name VARCHAR(225),
+end_station_id TEXT,start_lat VARCHAR(225),start_lng VARCHAR(225),end_lat VARCHAR(225), end_lng VARCHAR(225),member_casual TEXT ,ride_length VARCHAR(225),day_of_week INT);
+
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\Cyclistic.XLS\\202102-divvy-tripdata.csv'
+INTO TABLE tripdata_202112
+FIELDS TERMINATED BY ','
+ENCLOSED BY ""
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS; 
+
 
 ```sql 
+After importing the data into mysql database, merging them into one table (cyclistic.tripdata_2021)
+
+
+
 CREATE TABLE tripdata_2021 AS(SELECT ride_id ,rideable_type ,started_at ,ended_at ,start_station_name ,start_station_id ,end_station_name ,end_station_id ,start_lat ,start_lng ,end_lat ,end_lng ,member_casual ,ride_length ,day_of_week 
 FROM cyclistic.tripdata_202101
 UNION ALL 
@@ -61,13 +197,20 @@ SELECT ride_id  ,rideable_type ,started_at ,ended_at ,start_station_name ,start_
 
 ### Processing and Analysis of Data 
 
+
+This section is filtering, transforming and 
+
+In the previous section, the datatype of started_at and ended_at columns suppose to be datetime. However, I input it as string datatype. 
+Hence, both columns are needed to be casted as datetime. 
+
  ```sql
 -- retrieving filtered and cleaned data --- 
+
 CREATE VIEW cyclistic.TRIPDATA AS SELECT
-distinct(ride_id),
+distinct(ride_id), ---------------------------------------------------------- remove the duplicate value 
 rideable_type,
-cast(str_to_date(started_at,'%d/%m/%y %H:%i') as datetime) as started_at,
-cast(str_to_date(ended_at,'%d/%m/%y %H:%i') as datetime) as ended_at,
+cast(str_to_date(started_at,'%d/%m/%y %H:%i') as datetime) as started_at, --- cast the field to datetime type while retrieving other columns 
+cast(str_to_date(ended_at,'%d/%m/%y %H:%i') as datetime) as ended_at,     --- cast the field to datetime type while retrieving other columns 
 start_station_name, 
 start_station_id ,
 end_station_name ,
@@ -76,33 +219,32 @@ start_lat ,
 start_lng ,
 end_lat,
 end_lng,
-ride_length,
 member_casual ,
-day_of_week,
+WEEKDAY(started_at) AS day_of_week, ------------------------------------------use WEEKDAY function to sort out the day of week for each record
  (CASE 
-when day_of_Week = 1 then 'Sunday' 
-when day_of_Week = 2 then 'Monday' 
-when day_of_Week = 3 then 'Tuesday'
-when day_of_Week = 4 then 'Wednesday'
-when day_of_Week = 5 then 'Thursday'
-when day_of_Week = 6 then 'Friday'
-when day_of_Week = 7 then 'Saturday'
+when day_of_Week = 6 then 'Sunday' 
+when day_of_Week = 0 then 'Monday' 
+when day_of_Week = 1 then 'Tuesday'
+when day_of_Week = 2 then 'Wednesday'
+when day_of_Week = 3 then 'Thursday'
+when day_of_Week = 4 then 'Friday'
+when day_of_Week = 5 then 'Saturday'
 end ) AS weekday_weekend,
-cast(concat(cast(start_lng as char) , cast(start_lat as char)) - CONCAT(cast(end_lng as char) ,cast(end_lat as char)) as float) as ride_distance,
-MINUTE(timediff(ended_at , started_at)) as ride_length_2
+MINUTE(datediff(ended_at , started_at)) as ride_length -------------------- using the DATEDIFF function to calculate the ride length of each users
 FROM cyclistic.tripdata_2021
 WHERE start_station_name !='' and  end_station_name != '' 
-HAVING ride_length_2 > MINUTE(0)
+HAVING ride_length > MINUTE(0)
 ```
-[summary statistics] 
 
 ## Data Visualization 
+
+In this section, I have chosen tableau to visualize my cleaned datatset. 
 
 #### Average Ride Duration: 
 
 <img src="https://i.imgur.com/JOUZW7q.png" height="300" width="450">
 
-#### User
+#### Trip count per rider 
 Looking at the total count of trips for each day of the week, members take more trips during the weekdays than casual riders; except during weekends, the number of trips taken by casual riders exceed members. We then can decude that majority of the member users using bikes for commuting to workplace. This can be further supported by looking at the numbers of riders taken throughout a day
 
 <img src="https://i.imgur.com/X8WaZkv.png" height="300" width="450">
@@ -117,7 +259,7 @@ Here, we can see that members take more bike rides overall than casual riders th
 Looking at the combined year, casual riders exceed members in number of bike rides between mid-May and mid-August, perhaps suggesting an increase in locals on vacation and tourists visiting Chicago during the summer months.
 <img src="https://i.imgur.com/rBuNeX0.png" height="300" width="450">
 
-#### Most Popular Stations for Casual Users 
+#### Most Popular Stations for Riders  
 Top 10 popular station for casual and member users
 <img src="https://i.imgur.com/KibFps2.png" height="300" width="450">
 
@@ -132,22 +274,14 @@ Members:
 
 Casual Riders: 
 - Casual Riders may be a mixture of locals and tourists who ride bikes for longer period of time and more often on the weekend. 
-- Their average trip duration is 6 minutes longer than members riders 
+- Their average trip duration is twice longer than average ride length of members riders 
 - Their ridership peaks above members during the summer months
 
 
 
 ##### Recommendations 
 
-Implement advertising annual memberships prices more using billboards/posters near the top 20 most popular stations for casual users.
-Provide a limited discount on annual memberships purchased during the months of lowest traffic to increase rider usage in these months.
-Have frequent advertisements on social media and television during peak hours and peak months, since that is when most people have a thought about riding bikes.
-Consider provide free ride minutes for every minute passed after 30 minutes of usage, where the free minutes can ONLY be redeemed on weekdays to help promote rider usage during weekdays.
-Now that I have defined the key differences between members and casual riders, the marketing department is able to come up with some strategies that can help market the annual membership to casual riders and convert them into members.
-
-I recommend launching a marketing campaign highlighting the benefits of having an annual membership pass. Rather than paying for each trip, Cylistic should emphasize to casual riders the lower-cost per hour compared to not having an annual membership. We should offer exclusive benefits for members such as a priority access pass that enables them to secure a bike up to an hour in advance by making reservations through the app.
-
-Cyclistic could also create a weekend membership pass providing casual riders with unlimited rides on the weekend. This could help persuade casual riders into purchasing an annual membership.
-
-Lastly, we could launch tiered weekly and monthly passes to capture casual riders in the market who cannot commit to an annual pass. This could be especially appealing during the summer months when the ridership of casual riders exceeds that of annual members.
-
+I recommend a marketing campaign pinpointing the perks of subscribing to membership pass such as lower cost per hour, access to advance booking system, and loyalty program. 
+- The place near the top 20 most popular stations should advertise heavily because it has the highest traffic across 200 stations which contributing to huge part of the profit. 
+- During the cold season such as winters, promotion on membership could be considered to increase the ridership during the off season. 
+- The social media marketing or advertisement should be more frequent during the peaks of days ( 8am, 12pm, 6pm) , months (summers). 
