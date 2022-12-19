@@ -220,7 +220,7 @@ start_lng ,
 end_lat,
 end_lng,
 member_casual ,
-WEEKDAY(started_at) AS day_of_week, ------------------------------------------use WEEKDAY function to sort out the day of week for each record
+WEEKDAY(started_at) AS day_of_week, ------------------------------------------ use WEEKDAY function to sort out the day of week for each recor222222`d
  (CASE 
 when day_of_Week = 6 then 'Sunday' 
 when day_of_Week = 0 then 'Monday' 
@@ -230,18 +230,16 @@ when day_of_Week = 3 then 'Thursday'
 when day_of_Week = 4 then 'Friday'
 when day_of_Week = 5 then 'Saturday'
 end ) AS weekday_weekend,
-MINUTE(datediff(ended_at , started_at)) as ride_length -------------------- using the DATEDIFF function to calculate the ride length of each users
+MINUTE(datediff(ended_at , started_at)) as ride_length ----------------------- using the DATEDIFF function to calculate the ride length of each users
 FROM cyclistic.tripdata_2021
 WHERE start_station_name !='' and  end_station_name != '' 
 HAVING ride_length > MINUTE(0)
 ```
 
 ## Data Visualization 
-
 In this section, I have chosen tableau to visualize my cleaned datatset. 
 
 #### Average Ride Duration: 
-
 <img src="https://i.imgur.com/JOUZW7q.png" height="300" width="450">
 
 #### Trip count per rider 
@@ -251,7 +249,6 @@ Looking at the total count of trips for each day of the week, members take more 
 
 
 #### Hourly Traffic Analysis of Users
-
 Here, we can see that members take more bike rides overall than casual riders throughout the day. Ridership peaks around 8am, 12pm, and 6pm, suggesting an increase in rides during the morning, lunch, and evening rush hours of the day.
  <img src="https://i.imgur.com/ghp4lWs.png" height="300" width="450">
 
@@ -266,7 +263,6 @@ Top 10 popular station for casual and member users
 ## Conclusion 
  
 #### Findings
-
 Members: 
 - Members are most likely daily traveller who take bikes consistently during weekday than casual riders. 
 - Their average trip duration of 12.83 minutes is seven minutes lesser than the average trip length of casual users. 
@@ -280,7 +276,6 @@ Casual Riders:
 
 
 ##### Recommendations 
-
 I recommend a marketing campaign pinpointing the perks of subscribing to membership pass such as lower cost per hour, access to advance booking system, and loyalty program. 
 - The place near the top 20 most popular stations should advertise heavily because it has the highest traffic across 200 stations which contributing to huge part of the profit. 
 - During the cold season such as winters, promotion on membership could be considered to increase the ridership during the off season. 
