@@ -1,25 +1,40 @@
 ### Introduction 
 Cyclistic is a Bike-Sharing coompany based in Chicago that possess more than 5,800 bicycles and 600 docking stations. Cyclistic users are more likely to use their bikes for leisure, but about 30% use them to commute for work each day. Until now, Cyclistic’s marketing strategy relied on building general awareness and appealing to broad consumer segments. The company offers single day passes, full day passes for a price for casual users, and provie an annual subscription fee for its members. Customers who purchase single-ride or full-day passes are referred to as casual riders. Customers who purchase annual memberships are Cyclistic members.
 
+### About Cyclistics 
 Cyclistic has concluded that annual members are much more profitable than casual riders. Therefore, maximizing the number of annual members will be key to future growth. Rather than creating a marketing campaign that targets all-new customers, they believe creating a marketing campaign solely focused on casual users would help convert casual users into members. The company has set a clear goal of designing marketing strategies aimed at converting casual users into members. In order to do so they need to better understand the difference between how casual users differ from subscribed members and interest in analyzing the historical bike data trip to help identify trends.
 
+### Method Approach 
+# Phase 1. Ask 
 
-### Problem Statements 
-The Company's analysts have inferred that annual members are much more profitable for the company than casual users, so they believe that the key of the company's future is depended upon maximizing the number of annual memberships.
-
-The business-related problem statements that could be asked to improve the company's growth rate and success is shared below:
+### 1.1: Business Task
+The Company's analysts have inferred that annual members are much more profitable for the company than casual users, so they believe that the key of the company's future is depended upon maximizing the number of annual memberships. The business-related problem statements that could be asked to improve the company's growth rate and success is shared below:
 
 1. How do casual users and annual subcribed members use Cyclistic Bikes differently?
 2. How can we design new marketing strategies to help convert casual members into annual members?
 
-### Preparing Data for Analysis
- 
+### 1.2: Key Stakeholders
+
+# Phase 2. Prepare
+### 2.1: Dataset Used 
+
+In this project, I used datasets which provided by this google course and has been made available by Motivate International Inc. This public data that you can explore how different customer types are using Cyclistic bikes. 
+
+### 2.2: Dataset Summary 
+I downloaded zip files provided, then extracted to csv files. There are 12 datasets.Each file represents different month of rider data. 
+
+The following summary has listed tables that I selected for this project.
+<img src = "https://imgur.com/OHa9nRL.png">
+
+### 2.3: Dataset Limitations and Integrity
+
+# Phase 3. Process 
+### 3.1: Importing Datasets 
+
 For this project, I've used the 13 trip-data datasets in 2021 year. Click on this link to access the website and download the datasets provided as .zip files. The data provided in this website is made available to access to the public.
 Or you could access and download the data from this repository named as "Raw Data".
 
-I am using MySQL in this part of the project to help process and analyze the datasets. 
-
-First make sure to import all of the dataset as a .csv file to the database server. Check and verify if the data types of each of the columns in each dataset is same to merge them all together.
+I am using MySQL in this part of the project to help process and analyze the datasets. First make sure to import all of the dataset as a .csv file to the database server. Check and verify if the data types of each of the columns in each dataset is same to merge them all together.
 
 NOTE: the start_station_id column of dataset from Dec 2020 to April 2020 contains string values
 
@@ -27,11 +42,9 @@ NOTE: the start_station_id column of dataset from Dec 2020 to April 2020 contain
 
 - Due to large data file, I created table for each month and imported file by month before merging them into one. 
 
-
 --- January---
 CREATE TABLE tripdata_202101 (ride_id VARCHAR(225) ,rideable_type TEXT, started_at VARCHAR(225),ended_at VARCHAR(225),start_station_name VARCHAR(225),start_station_id VARCHAR(225),end_station_name VARCHAR(225),
 end_station_id TEXT,start_lat VARCHAR(225),start_lng VARCHAR(225),end_lat VARCHAR(225), end_lng VARCHAR(225),member_casual TEXT ,ride_length VARCHAR(225),day_of_week INT);
-
 LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\Cyclistic.XLS\\202101-divvy-tripdata.csv'
 INTO TABLE tripdata_202101
 FIELDS TERMINATED BY ','
@@ -53,7 +66,6 @@ IGNORE 1 ROWS;
 ---March---
 CREATE TABLE tripdata_202103 (ride_id VARCHAR(225) ,rideable_type TEXT, started_at VARCHAR(225),ended_at VARCHAR(225),start_station_name VARCHAR(225),start_station_id VARCHAR(225),end_station_name VARCHAR(225),
 end_station_id TEXT,start_lat VARCHAR(225),start_lng VARCHAR(225),end_lat VARCHAR(225), end_lng VARCHAR(225),member_casual TEXT ,ride_length VARCHAR(225),day_of_week INT);
-
 LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\Cyclistic.XLS\\202103-divvy-tripdata.csv'
 INTO TABLE tripdata_202103
 FIELDS TERMINATED BY ','
@@ -64,7 +76,6 @@ IGNORE 1 ROWS;
 ---April---
 CREATE TABLE tripdata_202104 (ride_id VARCHAR(225) ,rideable_type TEXT, started_at VARCHAR(225),ended_at VARCHAR(225),start_station_name VARCHAR(225),start_station_id VARCHAR(225),end_station_name VARCHAR(225),
 end_station_id TEXT,start_lat VARCHAR(225),start_lng VARCHAR(225),end_lat VARCHAR(225), end_lng VARCHAR(225),member_casual TEXT ,ride_length VARCHAR(225),day_of_week INT);
-
 LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\Cyclistic.XLS\\202104-divvy-tripdata.csv'
 INTO TABLE tripdata_202104
 FIELDS TERMINATED BY ','
@@ -75,7 +86,6 @@ IGNORE 1 ROWS;
 ---May---
 CREATE TABLE tripdata_202105 (ride_id VARCHAR(225) ,rideable_type TEXT, started_at VARCHAR(225),ended_at VARCHAR(225),start_station_name VARCHAR(225),start_station_id VARCHAR(225),end_station_name VARCHAR(225),
 end_station_id TEXT,start_lat VARCHAR(225),start_lng VARCHAR(225),end_lat VARCHAR(225), end_lng VARCHAR(225),member_casual TEXT ,ride_length VARCHAR(225),day_of_week INT);
-
 LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\Cyclistic.XLS\\202102-divvy-tripdata.csv'
 INTO TABLE tripdata_202105
 FIELDS TERMINATED BY ','
@@ -86,7 +96,6 @@ IGNORE 1 ROWS;
 ---June---
 CREATE TABLE tripdata_202106 (ride_id VARCHAR(225) ,rideable_type TEXT, started_at VARCHAR(225),ended_at VARCHAR(225),start_station_name VARCHAR(225),start_station_id VARCHAR(225),end_station_name VARCHAR(225),
 end_station_id TEXT,start_lat VARCHAR(225),start_lng VARCHAR(225),end_lat VARCHAR(225), end_lng VARCHAR(225),member_casual TEXT ,ride_length VARCHAR(225),day_of_week INT);
-
 LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\Cyclistic.XLS\\202102-divvy-tripdata.csv'
 INTO TABLE tripdata_202106
 FIELDS TERMINATED BY ','
@@ -97,7 +106,6 @@ IGNORE 1 ROWS;
 ---July---
 CREATE TABLE tripdata_202107 (ride_id VARCHAR(225) ,rideable_type TEXT, started_at VARCHAR(225),ended_at VARCHAR(225),start_station_name VARCHAR(225),start_station_id VARCHAR(225),end_station_name VARCHAR(225),
 end_station_id TEXT,start_lat VARCHAR(225),start_lng VARCHAR(225),end_lat VARCHAR(225), end_lng VARCHAR(225),member_casual TEXT ,ride_length VARCHAR(225),day_of_week INT);
-
 LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\Cyclistic.XLS\\202102-divvy-tripdata.csv'
 INTO TABLE tripdata_202107
 FIELDS TERMINATED BY ','
@@ -119,7 +127,6 @@ IGNORE 1 ROWS;
 ---September---
 CREATE TABLE tripdata_202109 (ride_id VARCHAR(225) ,rideable_type TEXT, started_at VARCHAR(225),ended_at VARCHAR(225),start_station_name VARCHAR(225),start_station_id VARCHAR(225),end_station_name VARCHAR(225),
 end_station_id TEXT,start_lat VARCHAR(225),start_lng VARCHAR(225),end_lat VARCHAR(225), end_lng VARCHAR(225),member_casual TEXT ,ride_length VARCHAR(225),day_of_week INT);
-
 LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\Cyclistic.XLS\\202102-divvy-tripdata.csv'
 INTO TABLE tripdata_202109
 FIELDS TERMINATED BY ','
@@ -130,7 +137,6 @@ IGNORE 1 ROWS;
 ---October---
 CREATE TABLE tripdata_202110 (ride_id VARCHAR(225) ,rideable_type TEXT, started_at VARCHAR(225),ended_at VARCHAR(225),start_station_name VARCHAR(225),start_station_id VARCHAR(225),end_station_name VARCHAR(225),
 end_station_id TEXT,start_lat VARCHAR(225),start_lng VARCHAR(225),end_lat VARCHAR(225), end_lng VARCHAR(225),member_casual TEXT ,ride_length VARCHAR(225),day_of_week INT);
-
 LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\Cyclistic.XLS\\202102-divvy-tripdata.csv'
 INTO TABLE tripdata_202110
 FIELDS TERMINATED BY ','
@@ -141,7 +147,6 @@ IGNORE 1 ROWS;
 ---November---
 CREATE TABLE tripdata_202111 (ride_id VARCHAR(225) ,rideable_type TEXT, started_at VARCHAR(225),ended_at VARCHAR(225),start_station_name VARCHAR(225),start_station_id VARCHAR(225),end_station_name VARCHAR(225),
 end_station_id TEXT,start_lat VARCHAR(225),start_lng VARCHAR(225),end_lat VARCHAR(225), end_lng VARCHAR(225),member_casual TEXT ,ride_length VARCHAR(225),day_of_week INT);
-
 LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\Cyclistic.XLS\\202102-divvy-tripdata.csv'
 INTO TABLE tripdata_202111
 FIELDS TERMINATED BY ','
@@ -152,20 +157,19 @@ IGNORE 1 ROWS;
 ---December---
 CREATE TABLE tripdata_202112 (ride_id VARCHAR(225) ,rideable_type TEXT, started_at VARCHAR(225),ended_at VARCHAR(225),start_station_name VARCHAR(225),start_station_id VARCHAR(225),end_station_name VARCHAR(225),
 end_station_id TEXT,start_lat VARCHAR(225),start_lng VARCHAR(225),end_lat VARCHAR(225), end_lng VARCHAR(225),member_casual TEXT ,ride_length VARCHAR(225),day_of_week INT);
-
 LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\Cyclistic.XLS\\202102-divvy-tripdata.csv'
 INTO TABLE tripdata_202112
 FIELDS TERMINATED BY ','
 ENCLOSED BY ""
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS; 
+```
 
+### 3.2: Merging Datasets
 
-```sql 
 After importing the data into mysql database, merging them into one table (cyclistic.tripdata_2021)
 
-
-
+```sql
 CREATE TABLE tripdata_2021 AS(SELECT ride_id ,rideable_type ,started_at ,ended_at ,start_station_name ,start_station_id ,end_station_name ,end_station_id ,start_lat ,start_lng ,end_lat ,end_lng ,member_casual ,ride_length ,day_of_week 
 FROM cyclistic.tripdata_202101
 UNION ALL 
@@ -194,10 +198,7 @@ FROM cyclistic.tripdata_202111
 UNION ALL
 SELECT ride_id  ,rideable_type ,started_at ,ended_at ,start_station_name ,start_station_id ,end_station_name ,end_station_id ,start_lat ,start_lng ,end_lat ,end_lng ,member_casual ,ride_length ,day_of_week FROM cyclistic.tripdata_202112);
 ```
-
-### Processing and Analysis of Data 
-
-
+### 3.3 Cleaning Data 
 This section is filtering, transforming and 
 
 In the previous section, the datatype of started_at and ended_at columns suppose to be datetime. However, I input it as string datatype. 
@@ -235,6 +236,15 @@ FROM cyclistic.tripdata_2021
 WHERE start_station_name !='' and  end_station_name != '' 
 HAVING ride_length > MINUTE(0)
 ```
+
+
+# 4. Analyze (Tableau)
+# 5. Share (Findings)
+# 6. Act  (Recommendations)
+
+
+### Preparing Data for Analysis
+
 
 ## Data Visualization 
 In this section, I have chosen tableau to visualize my cleaned datatset. 
