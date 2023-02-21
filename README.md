@@ -247,11 +247,11 @@ HAVING ride_length > MINUTE(0)
 ## Data Visualization 
 In this section, I have chosen tableau to visualize my cleaned datatset. 
 
-#### Average Ride Duration: 
+#### Average Ride Duration:    
 <img src="https://i.imgur.com/JOUZW7q.png" height="300" width="450">
 
 #### Trip count per rider 
-Looking at the total count of trips for each day of the week, members take more trips during the weekdays than casual riders; except during weekends, the number of trips taken by casual riders exceed members. We then can decude that majority of the member users using bikes for commuting to workplace. This can be further supported by looking at the numbers of riders taken throughout a day
+Looking at the total count of trips for each day of the week, members take more trips during the weekdays than casual riders; except during weekends, the number of trips taken by casual riders exceed members. We then can decude that majority of the member users using bikes for commuting to workplace. This can be further supported by looking at the numbers of riders taken throughout a day  
 <img src="https://i.imgur.com/X8WaZkv.png" height="300" width="450">
 
 
@@ -264,7 +264,7 @@ Looking at the combined year, casual riders exceed members in number of bike rid
 <img src="https://i.imgur.com/rBuNeX0.png" height="300" width="450">
 
 #### Most Popular Stations for Riders  
-Top 10 popular station for casual and member users
+Top 10 popular station for casual and member users    
 <img src="https://i.imgur.com/KibFps2.png" height="300" width="450">
 
 ## Conclusion 
