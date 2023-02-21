@@ -1,19 +1,19 @@
-### Introduction 
+### Introduction   
 Cyclistic is a Bike-Sharing coompany based in Chicago that possess more than 5,800 bicycles and 600 docking stations. Cyclistic users are more likely to use their bikes for leisure, but about 30% use them to commute for work each day. Until now, Cyclistic’s marketing strategy relied on building general awareness and appealing to broad consumer segments. The company offers single day passes, full day passes for a price for casual users, and provie an annual subscription fee for its members. Customers who purchase single-ride or full-day passes are referred to as casual riders. Customers who purchase annual memberships are Cyclistic members.
 
-### About Cyclistics 
+### About Cyclistics   
 Cyclistic has concluded that annual members are much more profitable than casual riders. Therefore, maximizing the number of annual members will be key to future growth. Rather than creating a marketing campaign that targets all-new customers, they believe creating a marketing campaign solely focused on casual users would help convert casual users into members. The company has set a clear goal of designing marketing strategies aimed at converting casual users into members. In order to do so they need to better understand the difference between how casual users differ from subscribed members and interest in analyzing the historical bike data trip to help identify trends.
 
-### Method Approach 
+### Method Approach    
 # Phase 1. Ask 
 
-### 1.1: Business Task
+### 1.1: Business Task   
 The Company's analysts have inferred that annual members are much more profitable for the company than casual users, so they believe that the key of the company's future is depended upon maximizing the number of annual memberships. The business-related problem statements that could be asked to improve the company's growth rate and success is shared below:
 
 1. How do casual users and annual subcribed members use Cyclistic Bikes differently?
 2. How can we design new marketing strategies to help convert casual members into annual members?
 
-### 1.2: Key Stakeholders
+### 1.2: Key Stakeholders    
 
 # Phase 2. Prepare
 ### 2.1: Dataset Used 
@@ -237,11 +237,9 @@ WHERE start_station_name !='' and  end_station_name != ''
 HAVING ride_length > MINUTE(0)
 ```
 
-
 # 4. Analyze (Tableau)
 # 5. Share (Findings)
 # 6. Act  (Recommendations)
-
 
 ### Preparing Data for Analysis
 
@@ -254,16 +252,15 @@ In this section, I have chosen tableau to visualize my cleaned datatset.
 
 #### Trip count per rider 
 Looking at the total count of trips for each day of the week, members take more trips during the weekdays than casual riders; except during weekends, the number of trips taken by casual riders exceed members. We then can decude that majority of the member users using bikes for commuting to workplace. This can be further supported by looking at the numbers of riders taken throughout a day
-
 <img src="https://i.imgur.com/X8WaZkv.png" height="300" width="450">
 
 
 #### Hourly Traffic Analysis of Users
-Here, we can see that members take more bike rides overall than casual riders throughout the day. Ridership peaks around 8am, 12pm, and 6pm, suggesting an increase in rides during the morning, lunch, and evening rush hours of the day.
+Here, we can see that members take more bike rides overall than casual riders throughout the day. Ridership peaks around 8am, 12pm, and 6pm, suggesting an increase in rides during the morning, lunch, and evening rush hours of the day.    
  <img src="https://i.imgur.com/ghp4lWs.png" height="300" width="450">
 
 #### Monthly User Traffic 
-Looking at the combined year, casual riders exceed members in number of bike rides between mid-May and mid-August, perhaps suggesting an increase in locals on vacation and tourists visiting Chicago during the summer months.
+Looking at the combined year, casual riders exceed members in number of bike rides between mid-May and mid-August, perhaps suggesting an increase in locals on vacation and tourists visiting Chicago during the summer months.     
 <img src="https://i.imgur.com/rBuNeX0.png" height="300" width="450">
 
 #### Most Popular Stations for Riders  
