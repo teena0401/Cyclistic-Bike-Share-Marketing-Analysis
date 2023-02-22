@@ -1,36 +1,44 @@
-### Introduction   
+<img src="https://imgur.com/d3mpvsy.png">
+
+## Introduction   
 Cyclistic is a Bike-Sharing coompany based in Chicago that possess more than 5,800 bicycles and 600 docking stations. Cyclistic users are more likely to use their bikes for leisure, but about 30% use them to commute for work each day. Until now, Cyclistic’s marketing strategy relied on building general awareness and appealing to broad consumer segments. The company offers single day passes, full day passes for a price for casual users, and provie an annual subscription fee for its members. Customers who purchase single-ride or full-day passes are referred to as casual riders. Customers who purchase annual memberships are Cyclistic members.
 
-### About Cyclistics   
+## About Cyclistics   
 Cyclistic has concluded that annual members are much more profitable than casual riders. Therefore, maximizing the number of annual members will be key to future growth. Rather than creating a marketing campaign that targets all-new customers, they believe creating a marketing campaign solely focused on casual users would help convert casual users into members. The company has set a clear goal of designing marketing strategies aimed at converting casual users into members. In order to do so they need to better understand the difference between how casual users differ from subscribed members and interest in analyzing the historical bike data trip to help identify trends.
 
-### Method Approach    
-# Phase 1. Ask 
+## Method Approach    
+1. Ask - formulating business question 
+2. Prepare - choosing the suitable datasets 
+3. Process - ensuring the quality of datasets 
+4. Analyze - extracting inights from cleaned datasets 
+5. Share - transforming it into interactive formats 
+6. Act - suggesting actionable ideas that helps to solve business problem
 
-### 1.1: Business Task   
-The Company's analysts have inferred that annual members are much more profitable for the company than casual users, so they believe that the key of the company's future is depended upon maximizing the number of annual memberships. The business-related problem statements that could be asked to improve the company's growth rate and success is shared below:
-
+##Phase 1: ASK
+##### **1.1: Business Task:**   
+The Company's analysts have inferred that annual members are much more profitable for the company than casual users, so they believe that the key of the company's future is depended upon maximizing the number of annual memberships. The business-related problem statements that could be asked to improve the company's growth rate and success is shared below:    
 1. How do casual users and annual subcribed members use Cyclistic Bikes differently?
 2. How can we design new marketing strategies to help convert casual members into annual members?
 
-### 1.2: Key Stakeholders    
+##### 1.2: Key Stakeholders    
 
-# Phase 2. Prepare
-### 2.1: Dataset Used 
+## Phase 2: Prepare   
+##### 2.1: Dataset Used 
 
-In this project, I used datasets which provided by this google course and has been made available by Motivate International Inc. This public data that you can explore how different customer types are using Cyclistic bikes. 
+In this project, I used datasets which provided by this google course and has been made available by Motivate International Inc. This public data that you can explore how different customer types are using Cyclistic bikes.
+You will use Cyclistic's historical trip data to analyze and identify trends. Download the previous 12 months of Cyclistic trip data here. (Note: The datasets have a different name because Cyclistic is a fictional company. For the purposes of this case study, the datasets are appropriate and will enable you to answer the business questions. The data has been made available by Motivate International Inc. under this license.) This is public data that you can use to explore how different customer types are using Cyclistic bikes. But note that data-privacy issues prohibit you from using riders' personally identifiable information. This means that you won't be able to connect pass purchases to credit card numbers to determine if casual riders live in the Cyclistic service area or if they have purchased multiple single passes.![image](https://user-images.githubusercontent.com/73873378/220581743-dd4d792f-a432-41f5-bccc-a29c0cc93b46.png)
 
-### 2.2: Dataset Summary 
+
+##### 2.2: Dataset Summary 
 I downloaded zip files provided, then extracted to csv files. There are 12 datasets.Each file represents different month of rider data. 
-
 The following summary has listed tables that I selected for this project.
 <img src = "https://imgur.com/OHa9nRL.png">
 
 ### 2.3: Dataset Limitations and Integrity
+The collected data has 12-months time span (January 2021 - December 2021) and have large number of users data are collected in this sudy.
 
-# Phase 3. Process 
-### 3.1: Importing Datasets 
-
+## Phase 3. Process 
+##### 3.1: Importing Datasets    
 For this project, I've used the 13 trip-data datasets in 2021 year. Click on this link to access the website and download the datasets provided as .zip files. The data provided in this website is made available to access to the public.
 Or you could access and download the data from this repository named as "Raw Data".
 
@@ -165,7 +173,7 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS; 
 ```
 
-### 3.2: Merging Datasets
+###### 3.2: Merging Datasets
 
 After importing the data into mysql database, merging them into one table (cyclistic.tripdata_2021)
 
@@ -198,7 +206,7 @@ FROM cyclistic.tripdata_202111
 UNION ALL
 SELECT ride_id  ,rideable_type ,started_at ,ended_at ,start_station_name ,start_station_id ,end_station_name ,end_station_id ,start_lat ,start_lng ,end_lat ,end_lng ,member_casual ,ride_length ,day_of_week FROM cyclistic.tripdata_202112);
 ```
-### 3.3 Cleaning Data 
+##### 3.3 Cleaning Data 
 This section is filtering, transforming and 
 
 In the previous section, the datatype of started_at and ended_at columns suppose to be datetime. However, I input it as string datatype. 
@@ -237,13 +245,7 @@ WHERE start_station_name !='' and  end_station_name != ''
 HAVING ride_length > MINUTE(0)
 ```
 
-# 4. Analyze (Tableau)
-# 5. Share (Findings)
-# 6. Act  (Recommendations)
-
-### Preparing Data for Analysis
-
-
+# 4. Analyze (Tableau) 
 ## Data Visualization 
 In this section, I have chosen tableau to visualize my cleaned datatset. 
 
