@@ -15,19 +15,19 @@ Cyclistic has concluded that annual members are much more profitable than casual
 6. Act - suggesting actionable ideas that helps to solve business problem
 
 ## Phase 1: Ask
-##### **1.1: Business Task:**   
+#### 1.1: Business Task:
 The Company's analysts have inferred that annual members are much more profitable for the company than casual users, so they believe that the key of the company's future is depended upon maximizing the number of annual memberships. The business-related problem statements that could be asked to improve the company's growth rate and success is shared below:    
 1. How do casual users and annual subcribed members use Cyclistic Bikes differently?
 2. How can we design new marketing strategies to help convert casual members into annual members?
 
-##### 1.2: Key Stakeholders    
+#### 1.2: Key Stakeholders    
 
 ## Phase 2: Prepare   
-##### 2.1: Dataset Used 
+#### 2.1: Dataset Used 
 
 In this project, I used datasets which provided by this google course and has been made available by Motivate International Inc. This public data that you can explore how different customer types are using Cyclistic bikes.You will use Cyclistic's historical trip data to analyze and identify trends. Download the previous 12 months of Cyclistic trip data here. (Note: The datasets have a different name because Cyclistic is a fictional company. For the purposes of this case study, the datasets are appropriate and will enable you to answer the business questions.
 
-##### 2.2: Dataset Summary 
+#### 2.2: Dataset Summary 
 I downloaded zip files provided, then extracted to csv files. There are 12 datasets.Each file represents different month of rider data. 
 The following summary has listed tables that I selected for this project.
 <img src = "https://imgur.com/OHa9nRL.png">
@@ -36,7 +36,7 @@ The following summary has listed tables that I selected for this project.
 The collected data has 12-months time span (January 2021 - December 2021) and have large number of users data are collected in this sudy.
 
 ## Phase 3. Process 
-##### 3.1: Importing Datasets    
+#### 3.1: Importing Datasets    
 For this project, I've used the 13 trip-data datasets in 2021 year. Click on this link to access the website and download the datasets provided as .zip files. The data provided in this website is made available to access to the public.
 Or you could access and download the data from this repository named as "Raw Data".
 
@@ -170,7 +170,7 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS; 
 ```
 
-###### 3.2: Merging Datasets
+#### 3.2: Merging Datasets
 
 After importing the data into mysql database, merging them into one table (cyclistic.tripdata_2021)
 
@@ -203,7 +203,7 @@ FROM cyclistic.tripdata_202111
 UNION ALL
 SELECT ride_id  ,rideable_type ,started_at ,ended_at ,start_station_name ,start_station_id ,end_station_name ,end_station_id ,start_lat ,start_lng ,end_lat ,end_lng ,member_casual ,ride_length ,day_of_week FROM cyclistic.tripdata_202112);
 ```
-##### 3.3 Cleaning Data 
+#### 3.3 Cleaning Data 
 This section is filtering, transforming and 
 
 In the previous section, the datatype of started_at and ended_at columns suppose to be datetime. However, I input it as string datatype. 
@@ -270,7 +270,8 @@ Top 10 popular station for casual and member users
 **Members:** 
 - Members are most likely daily traveller who take bikes consistently during weekday than casual riders. 
 - Their average trip duration of 12.83 minutes is seven minutes lesser than the average trip length of casual users. 
-- Their ridership peaks around rush hour time during the day but decline during winter months       
+- Their ridership peaks around rush hour time during the day but decline during winter months    
+   
 **Casual Riders:**
 - Casual Riders may be a mixture of locals and tourists who ride bikes for longer period of time and more often on the weekend. 
 - Their average trip duration is twice longer than average ride length of members riders 
