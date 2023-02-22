@@ -14,7 +14,7 @@ Cyclistic has concluded that annual members are much more profitable than casual
 5. Share - transforming it into interactive formats 
 6. Act - suggesting actionable ideas that helps to solve business problem
 
-##Phase 1: ASK
+## Phase 1: Ask
 ##### **1.1: Business Task:**   
 The Company's analysts have inferred that annual members are much more profitable for the company than casual users, so they believe that the key of the company's future is depended upon maximizing the number of annual memberships. The business-related problem statements that could be asked to improve the company's growth rate and success is shared below:    
 1. How do casual users and annual subcribed members use Cyclistic Bikes differently?
@@ -253,7 +253,6 @@ In this section, I have chosen tableau to visualize my cleaned datatset.
 Looking at the total count of trips for each day of the week, members take more trips during the weekdays than casual riders; except during weekends, the number of trips taken by casual riders exceed members. We then can decude that majority of the member users using bikes for commuting to workplace. This can be further supported by looking at the numbers of riders taken throughout a day  
 <img src="https://i.imgur.com/X8WaZkv.png" height="300" width="450">
 
-
 #### Hourly Traffic Analysis of Users
 Here, we can see that members take more bike rides overall than casual riders throughout the day. Ridership peaks around 8am, 12pm, and 6pm, suggesting an increase in rides during the morning, lunch, and evening rush hours of the day.    
  <img src="https://i.imgur.com/ghp4lWs.png" height="300" width="450">
@@ -266,7 +265,7 @@ Looking at the combined year, casual riders exceed members in number of bike rid
 Top 10 popular station for casual and member users    
 <img src="https://i.imgur.com/KibFps2.png" height="300" width="450">
 
-## 5. Share  
+## 5.Share  
 ### Findings    
 **Members:** 
 - Members are most likely daily traveller who take bikes consistently during weekday than casual riders. 
