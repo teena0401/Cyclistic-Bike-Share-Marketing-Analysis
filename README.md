@@ -25,9 +25,7 @@ The Company's analysts have inferred that annual members are much more profitabl
 ## Phase 2: Prepare   
 ##### 2.1: Dataset Used 
 
-In this project, I used datasets which provided by this google course and has been made available by Motivate International Inc. This public data that you can explore how different customer types are using Cyclistic bikes.
-You will use Cyclistic's historical trip data to analyze and identify trends. Download the previous 12 months of Cyclistic trip data here. (Note: The datasets have a different name because Cyclistic is a fictional company. For the purposes of this case study, the datasets are appropriate and will enable you to answer the business questions. The data has been made available by Motivate International Inc. under this license.) This is public data that you can use to explore how different customer types are using Cyclistic bikes. But note that data-privacy issues prohibit you from using riders' personally identifiable information. This means that you won't be able to connect pass purchases to credit card numbers to determine if casual riders live in the Cyclistic service area or if they have purchased multiple single passes.![image](https://user-images.githubusercontent.com/73873378/220581743-dd4d792f-a432-41f5-bccc-a29c0cc93b46.png)
-
+In this project, I used datasets which provided by this google course and has been made available by Motivate International Inc. This public data that you can explore how different customer types are using Cyclistic bikes.You will use Cyclistic's historical trip data to analyze and identify trends. Download the previous 12 months of Cyclistic trip data here. (Note: The datasets have a different name because Cyclistic is a fictional company. For the purposes of this case study, the datasets are appropriate and will enable you to answer the business questions.
 
 ##### 2.2: Dataset Summary 
 I downloaded zip files provided, then extracted to csv files. There are 12 datasets.Each file represents different month of rider data. 
