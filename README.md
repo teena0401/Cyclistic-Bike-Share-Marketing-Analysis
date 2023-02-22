@@ -47,7 +47,6 @@ I am using MySQL in this part of the project to help process and analyze the dat
 NOTE: the start_station_id column of dataset from Dec 2020 to April 2020 contains string values
 
 ```sql
-
 - Due to large data file, I created table for each month and imported file by month before merging them into one. 
 
 --- January---
@@ -269,22 +268,19 @@ Looking at the combined year, casual riders exceed members in number of bike rid
 Top 10 popular station for casual and member users    
 <img src="https://i.imgur.com/KibFps2.png" height="300" width="450">
 
-## Conclusion 
- 
-#### Findings
-Members: 
+## 5. Share  
+### Findings    
+**Members:** 
 - Members are most likely daily traveller who take bikes consistently during weekday than casual riders. 
 - Their average trip duration of 12.83 minutes is seven minutes lesser than the average trip length of casual users. 
-- Their ridership peaks around rush hour time during the day but decline during winter months
-
-Casual Riders: 
+- Their ridership peaks around rush hour time during the day but decline during winter months       
+**Casual Riders:**
 - Casual Riders may be a mixture of locals and tourists who ride bikes for longer period of time and more often on the weekend. 
 - Their average trip duration is twice longer than average ride length of members riders 
 - Their ridership peaks above members during the summer months
 
-
-
-##### Recommendations 
+## 6.Act  
+### Recommendations 
 I recommend a marketing campaign pinpointing the perks of subscribing to membership pass such as lower cost per hour, access to advance booking system, and loyalty program. 
 - The place near the top 20 most popular stations should advertise heavily because it has the highest traffic across 200 stations which contributing to huge part of the profit. 
 - During the cold season such as winters, promotion on membership could be considered to increase the ridership during the off season. 
